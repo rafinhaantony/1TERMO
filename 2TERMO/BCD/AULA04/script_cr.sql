@@ -1,0 +1,26 @@
+-- Active: 1788435085055@@127.0.0.1@3306@sesi_cr_tb
+CREATE DATABASE sesi_cr_tb;
+use sesi_cr_tb;
+
+-- CRIAÇÂO DE TABELAS
+CREATE TABLE CLIENTE (
+    ID_Cliente int AUTO_INCREMENT PRIMARY key,
+    Nome_Cliente varchar(60) not null
+);
+
+CREATE TABLE pedido (
+    ID_Pedido INT AUTO_INCREMENT PRIMARY key,
+    Data_Pedido DATETIME NOT NULL,
+    ID_Cliente int not null,
+    FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE (ID_CLIENTE)
+);
+
+-- CONSULTA DE TABELAS
+SELECT * FROM cliente;
+SELECT * FROM pedido;
+
+-- INSERINDO DADOS NA TABELA
+INSERT INTO cliente (NOME_CLIENTE) VALUES
+('RAFAEL'),
+('ISABELA'),
+('ELEIR');
